@@ -13,6 +13,7 @@
 		FD7F349D242FA31B00DE1344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F349C242FA31B00DE1344 /* Assets.xcassets */; };
 		FD7F34A0242FA31B00DE1344 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F349F242FA31B00DE1344 /* Preview Assets.xcassets */; };
 		FD7F34A3242FA31B00DE1344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F34A1242FA31B00DE1344 /* LaunchScreen.storyboard */; };
+		FD808262242FAB8F0069071D /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD808261242FAB8F0069071D /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD7F349F242FA31B00DE1344 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD7F34A2242FA31B00DE1344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7F34A4242FA31B00DE1344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD808261242FAB8F0069071D /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				FD7F3496242FA31300DE1344 /* AppDelegate.swift */,
 				FD7F3498242FA31300DE1344 /* SceneDelegate.swift */,
 				FD7F349A242FA31300DE1344 /* ContentView.swift */,
+				FD808261242FAB8F0069071D /* SecondView.swift */,
 				FD7F349C242FA31B00DE1344 /* Assets.xcassets */,
 				FD7F34A1242FA31B00DE1344 /* LaunchScreen.storyboard */,
 				FD7F34A4242FA31B00DE1344 /* Info.plist */,
@@ -148,6 +151,7 @@
 			files = (
 				FD7F3497242FA31300DE1344 /* AppDelegate.swift in Sources */,
 				FD7F3499242FA31300DE1344 /* SceneDelegate.swift in Sources */,
+				FD808262242FAB8F0069071D /* SecondView.swift in Sources */,
 				FD7F349B242FA31300DE1344 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

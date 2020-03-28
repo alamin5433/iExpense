@@ -9,23 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var user = User()
+   @State private var showingSheet = false
     var body: some View {
-        VStack(spacing: 10){
-            Text("Your name is \(user.firstName) \(user.lastName)")
-            
-            TextField("First name", text: $user.firstName)
-                .cornerRadius(10)
-            TextField("Second Name", text: $user.lastName)
+        Button("Show Second View"){
+            self.showingSheet.toggle()
         }
-    .padding()
+        .sheet(isPresented: $showingSheet) {
+            SecondView(name: "Hasan")
+        }
     }
 }
 
-class User: ObservableObject {
-    @Published var firstName = "Bilbo"
-    @Published var lastName = "Baggins"
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
