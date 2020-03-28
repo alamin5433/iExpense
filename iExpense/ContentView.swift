@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var user = User()
+    @ObservedObject var user = User()
     var body: some View {
         VStack(spacing: 10){
             Text("Your name is \(user.firstName) \(user.lastName)")
@@ -22,9 +22,9 @@ struct ContentView: View {
     }
 }
 
-class User {
-    var firstName = "Bilbo"
-    var lastName = "Baggins"
+class User: ObservableObject {
+    @Published var firstName = "Bilbo"
+    @Published var lastName = "Baggins"
 }
 
 struct ContentView_Previews: PreviewProvider {
