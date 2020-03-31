@@ -10,7 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var numbers = [Int]()
-    @State private var currentNumber = 1
+    
+    @State private var currentNumber = UserDefaults.standard.integer(forKey: "currentNumber")
+   
     var body: some View {
         NavigationView {
             VStack {
@@ -23,7 +25,9 @@ struct ContentView: View {
                     
                     Button("Add Number") {
                         self.numbers.append(self.currentNumber)
+                        
                         self.currentNumber += 1
+                        UserDefaults.standard.set(self.currentNumber, forKey: "currentNumber")
                     }
                 }
             .navigationBarItems(leading: EditButton())
