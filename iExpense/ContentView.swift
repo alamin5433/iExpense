@@ -9,34 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var numbers = [Int]()
+   
     
-    @State private var currentNumber = UserDefaults.standard.integer(forKey: "currentNumber")
+    
+    @State private var user = SecondView(firstName: "Md", lastName: "Alamin")
    
     var body: some View {
         NavigationView {
             VStack {
-                    List {
-                        ForEach(numbers, id: \.self){ number in
-                            Text("\(number)")
-                        }
-                    .onDelete(perform: removeRows)
-                    }
-                    
-                    Button("Add Number") {
-                        self.numbers.append(self.currentNumber)
-                        
-                        self.currentNumber += 1
-                        UserDefaults.standard.set(self.currentNumber, forKey: "currentNumber")
+                Button("Save User"){
+                    let encoder = JSONEncoder()
+                    if let data = try? encoder.encode(self.user){
+                        UserDefaults.standard.set(data, forKey: "UserData")
                     }
                 }
+            }
             .navigationBarItems(leading: EditButton())
         }
     }
     
-    func removeRows(at offsets: IndexSet){
-        numbers.remove(atOffsets: offsets)
-    }
+    
 }
 
 

@@ -6,21 +6,11 @@
 //  Copyright © 2020 Al Amin. All rights reserved.
 //
 
-import SwiftUI
 
-struct SecondView: View {
-    var name: String
-    @Environment(\.presentationMode) var presentationMode
-    var body: some View {
-        Button("Dismiss") {
-            self.presentationMode.wrappedValue.dismiss()
-        }
-    }
+
+struct SecondView: Codable {
+    var firstName: String
+    var lastName: String
 }
 
-struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView(name: "Alamin")
-        
-    }
-}
+
