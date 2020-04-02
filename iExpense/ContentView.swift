@@ -10,25 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
    
-    
-    
-    @State private var user = SecondView(firstName: "Md", lastName: "Alamin")
+   @ObservedObject var expenses = Expenses()
    
     var body: some View {
         NavigationView {
-            VStack {
-                Button("Save User"){
-                    let encoder = JSONEncoder()
-                    if let data = try? encoder.encode(self.user){
-                        UserDefaults.standard.set(data, forKey: "UserData")
-                    }
+            List {
+                ForEach(expenses.items, id: \.name){ item in
+                    Text(item.name)
+                    
+                }
+                .onDelete(perform: removeItems)
+                Button(action: {
+                    let expense = ExpenseItem(name: "Test", type: "Personal", amount: 50)
+                    self.expenses.items.append(expense)
+                }){
+                    Image(systemName: "plus")
                 }
             }
-            .navigationBarItems(leading: EditButton())
+            .navigationBarTitle("iExpense")
         }
     }
     
-    
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
 }
 
 
