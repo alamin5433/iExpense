@@ -15,13 +15,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(expenses.items, id: \.name){ item in
+                ForEach(expenses.items, id: \.id){ item in
                     Text(item.name)
                     
                 }
                 .onDelete(perform: removeItems)
                 Button(action: {
-                    let expense = ExpenseItem(name: "Test", type: "Personal", amount: 50)
+                    let expense = ExpenseItem(name:"Test", type: "Personal", amount: 50)
                     self.expenses.items.append(expense)
                 }){
                     Image(systemName: "plus")
