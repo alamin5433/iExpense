@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
    
    @ObservedObject var expenses = Expenses()
+    @State private var showingAddExpense = false
    
     var body: some View {
         NavigationView {
@@ -20,15 +21,22 @@ struct ContentView: View {
                     
                 }
                 .onDelete(perform: removeItems)
+                
+            }
+            .navigationBarTitle("iExpense")
+            .navigationBarItems(trailing:
+            
                 Button(action: {
-                    let expense = ExpenseItem(name:"Test", type: "Personal", amount: 50)
-                    self.expenses.items.append(expense)
+                    self.showingAddExpense = true
                 }){
                     Image(systemName: "plus")
                 }
+            )
+            .sheet(isPresented: $showingAddExpense) {
+                AddView(expenses: self.expenses)
             }
-            .navigationBarTitle("iExpense")
         }
+        
     }
     
     func removeItems(at offsets: IndexSet) {
