@@ -6,7 +6,7 @@
 //  Copyright © 2020 Al Amin. All rights reserved.
 //
 import SwiftUI
-struct ExpenseItem: Identifiable {
+struct ExpenseItem: Identifiable,Codable {
    // var id: ObjectIdentifier
     
     let id = UUID()
@@ -14,3 +14,5 @@ struct ExpenseItem: Identifiable {
     let type: String
     let amount: Int
 }
+
+
